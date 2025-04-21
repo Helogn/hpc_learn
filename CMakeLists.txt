@@ -9,13 +9,16 @@ add_executable(hpc_runner
     src/main.cpp
     src/matrix/matrix.cpp
     src/time_statistic/cal_time.cpp
+    src/network/tcp_connect.cpp
 )
 
 # 设置头文件目录
 target_include_directories(hpc_runner PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src/time_statistic
     ${CMAKE_CURRENT_SOURCE_DIR}/src/matrix
-)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/network
+
+    )
 add_definitions(-DUSE_EIGEN)
 include_directories(/usr/local/include/Eigen)
 
