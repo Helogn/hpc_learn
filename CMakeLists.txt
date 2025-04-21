@@ -7,14 +7,17 @@ set(CMAKE_CXX_STANDARD 17)
 # 添加可执行文件（如果是应用程序）
 add_executable(hpc_runner
     src/main.cpp
+    src/matrix/matrix.cpp
     src/time_statistic/cal_time.cpp
-
 )
 
 # 设置头文件目录
 target_include_directories(hpc_runner PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src/time_statistic
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/matrix
 )
+add_definitions(-DUSE_EIGEN)
+include_directories(/usr/local/include/Eigen)
 
 # # 添加测试
 # enable_testing()

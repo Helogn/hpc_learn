@@ -19,8 +19,6 @@ void TimeLabel::compute()
 	//return elapsed_time.count();
 }
 
-void TimeLabel::print_time()
-{
-	std::cout << "Current date and time: " << elapsed_time.count() <<" s"<< std::endl;
-
+void TimeLabel::print_time(std::string print_str){
+	std::cout << print_str << elapsed_time.count() <<" s"<< std::endl;
 }
